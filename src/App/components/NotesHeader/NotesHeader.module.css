@@ -1,0 +1,40 @@
+.header {
+	padding: 12px;
+	width: 1240px;
+	min-height: 40px;
+	background-color: var(--color-secondary-a1);
+	color: var(--color-tertiary-a1);
+	text-align: start;
+}
+
+.header_list {
+	padding: 0;
+	display: flex;
+	gap: 10px;
+}
+
+.header_item,
+.header_logo,
+.header_icons {
+	list-style: none;
+}
+
+.header_item,
+.header_icons {
+	width: 180px;
+}
+
+.header_logo {
+	width: 70px;
+}
+
+.header_icons {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.icon {
+	width: 20px;
+	height: 20px;
+	fill: var(--color-tertiary-a1);
+}

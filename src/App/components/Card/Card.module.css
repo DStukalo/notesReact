@@ -1,0 +1,106 @@
+.card {
+	padding: 12px;
+	min-height: 50px;
+	width: 1240px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: var(--color-primary-a1);
+	transition: all linear 0.3;
+
+	&:hover {
+		background-color: var(--color-primary-a3);
+	}
+}
+
+.active {
+	background-color: var(--color-primary-a2);
+	&:hover {
+		background-color: var(--color-primary-a3);
+	}
+}
+
+.logo_container,
+.title,
+.item,
+.icons,
+.title_summary,
+.item_content {
+	width: 180px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: start;
+}
+
+.logo_container {
+	width: 70px;
+}
+
+.logo {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-secondary-a1);
+	border-radius: 100%;
+}
+
+.logo_icon {
+	width: 20px;
+	height: 20px;
+	fill: var(--color-tertiary-a1);
+}
+
+.title_summary {
+	width: 430px;
+}
+
+.item_content {
+	width: 200px;
+}
+
+.logo,
+.item,
+.icons,
+.item_content {
+	font-weight: 400;
+}
+
+.icons {
+	display: flex;
+	gap: 4px;
+	justify-content: flex-end;
+}
+
+.icon {
+	width: 20px;
+	height: 20px;
+	fill: var(--color-secondary-a1);
+	transition: all linear 0.3;
+
+	&:hover {
+		cursor: pointer;
+		fill: var(--color-tertiary-a1);
+	}
+}
+
+.btn {
+	width: 20px;
+	border: none;
+	background-color: inherit;
+	cursor: pointer;
+}
+
+.btn:hover .icon {
+	fill: var(--color-tertiary-a1);
+}
+
+html:has(.modal) {
+	overflow: hidden;
+}
+
+.modal {
+	width: 540px;
+}
