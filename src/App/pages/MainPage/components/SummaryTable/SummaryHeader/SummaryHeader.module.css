@@ -1,0 +1,32 @@
+.header {
+	padding: 12px;
+	width: 1240px;
+	min-height: 40px;
+	background-color: var(--color-secondary-a1);
+	color: var(--color-tertiary-a1);
+	text-align: start;
+}
+
+.header_list {
+	padding: 0;
+	display: flex;
+	gap: 10px;
+}
+
+.header_item,
+.header_logo,
+.header_name {
+	list-style: none;
+}
+
+.header_item {
+	width: 180px;
+}
+
+.header_logo {
+	width: 70px;
+}
+
+.header_name {
+	width: 430px;
+}
