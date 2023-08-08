@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap");
 @import "./App/styles/variables.css";
 
