@@ -1,6 +1,7 @@
 import { useId } from 'react';
 
 import { typesTask } from '~app/data/data';
+import type { Note } from '~types/types';
 
 export function useSummaryTableData(data: Note[]) {
 	const taskId = useId();
@@ -18,12 +19,8 @@ export function useSummaryTableData(data: Note[]) {
 	const result = typesTask.map((type) => ({
 		name: type,
 		id: setId(type),
-		archived: data
-			.filter((el) => el.category === type)
-			.filter((el) => el.archived).length,
-		active: data
-			.filter((el) => el.category === type)
-			.filter((el) => !el.archived).length,
+		archived: data.filter((el) => el.category === type && el.archived).length,
+		active: data.filter((el) => el.category === type && !el.archived).length,
 	}));
 
 	return result;

@@ -5,6 +5,7 @@ import { Card } from '~components/Card/Card';
 import { Form } from '~components/Form/Form';
 import { Modal } from '~components/Modal/Modal';
 import { NotesHeader } from '~components/NotesHeader/NotesHeader';
+import type { Note } from '~types/types';
 
 import { notesCardFiltered } from './helpers/notesCardFiltered';
 

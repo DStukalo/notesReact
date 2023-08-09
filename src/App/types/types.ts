@@ -1,4 +1,4 @@
-type Note = {
+export type Note = {
 	id: string;
 	createdAt: string;
 	archived: boolean;
