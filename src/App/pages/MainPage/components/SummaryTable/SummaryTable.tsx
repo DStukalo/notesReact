@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { Card } from '~components/Card/Card';
+import type { Note } from '~types/types';
 
 import { useSummaryTableData } from './hooks/useSummaryTableData';
 import { SummaryHeader } from './SummaryHeader/SummaryHeader';

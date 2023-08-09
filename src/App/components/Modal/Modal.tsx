@@ -12,7 +12,20 @@ type ModalProps = {
 
 export function Modal({ title, onClose, children }: ModalProps) {
 	return ReactDOM.createPortal(
-		<div className="fixed z-10 left-0 top-0 w-full h-full bg-secondary-100 bg-opacity-95 flex items-center justify-center">
+		<div
+			id="close-div"
+			onKeyDown={(e) => {
+				if (e.key === 'Escape') onClose(false);
+			}}
+			role="button"
+			tabIndex={0}
+			className="fixed z-10 left-0 top-0 w-full h-full bg-secondary-100 bg-opacity-95 flex items-center justify-center cursor-default"
+			onClick={(e) => {
+				if (e.currentTarget === e.target) {
+					onClose(false);
+				}
+			}}
+		>
 			<div className="p-4 relative bg-tertiary-100 my-0 mx-auto text-center rounded-md">
 				<Button
 					btnType="button"
