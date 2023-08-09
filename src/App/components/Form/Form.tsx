@@ -7,8 +7,6 @@ import { Label } from '~components/Label/Label';
 import { useAppDispatch } from '~hooks/redux';
 import { addNote, updateNote } from '~store/reducers/DataSlice';
 
-import styles from './Form.module.css';
-
 type FormCreateProps = {
 	type: 'create';
 	onClose: (showModal: boolean) => void;
@@ -142,25 +140,29 @@ export function Form({ type, onClose, defaultValues, textButton }: FormProps) {
 	return (
 		<form
 			onSubmit={onSubmitHandler}
-			className={styles.form}
+			className="p-8 box-border rounded-xl flex flex-col gap-1 bg-tertiary-100"
 			onChange={() => setDisabledButton(false)}
 		>
-			<div className={styles.item}>
+			<div className="min-h-[90px]">
 				<Label forHTML={nameID}>
-					name*
+					Name*
 					<input
 						id={nameID}
 						placeholder="Please enter your name"
-						className={styles.input}
+						className="min-h-[40px] w-full text-base rounded border p-2 bg-tertiary-100"
 						{...registers.name}
 					/>
 				</Label>
 				{errors.name && <ErrorMessage message={errors.name.message} />}
 			</div>
-			<div className={styles.item}>
+			<div className=" min-h-[90px]">
 				<Label forHTML={typeID}>
 					Category*
-					<select id={typeID} className={styles.select} {...registers.category}>
+					<select
+						id={typeID}
+						className="min-h-[40px] text-base rounded border p-2 bg-tertiary-100 "
+						{...registers.category}
+					>
 						<option value="Task">Task</option>
 						<option value="Random Thought">Random Thought</option>
 						<option value="Idea">Idea</option>
@@ -171,11 +173,11 @@ export function Form({ type, onClose, defaultValues, textButton }: FormProps) {
 					)}
 				</Label>
 			</div>
-			<div className={styles.item}>
+			<div className=" min-h-[120px] ">
 				<Label forHTML={contentID}>
 					Content*
 					<textarea
-						className={styles.textarea}
+						className="min-h-[60px] text-base rounded border p-2 bg-tertiary-100"
 						placeholder="Please enter your text description that note"
 						id={contentID}
 						{...registers.content}
@@ -183,7 +185,11 @@ export function Form({ type, onClose, defaultValues, textButton }: FormProps) {
 				</Label>
 				{errors.content && <ErrorMessage message={errors.content.message} />}
 			</div>
-			<Button btnType="submit" classes={styles.btn} isDisabled={disabledButton}>
+			<Button
+				btnType="submit"
+				classes="border p-2 rounded hover:enabled:bg-primary-300 enabled:bg-tertiary-100 disabled:bg-disabled"
+				isDisabled={disabledButton}
+			>
 				{textButton}
 			</Button>
 		</form>

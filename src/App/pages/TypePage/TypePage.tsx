@@ -6,8 +6,6 @@ import { useAppSelector } from '~hooks/redux';
 
 import { getDataTypePage } from './helpers/getDataTypePage';
 
-import styles from './TypePage.module.css';
-
 export function TypePage() {
 	const { type } = useParams();
 	const { notes } = useAppSelector((state) => state.dataReducer);
@@ -24,9 +22,9 @@ export function TypePage() {
 	}
 
 	return (
-		<article className={styles.container}>
-			<h1 className={styles.title}>{type}</h1>
-			<div className={styles.table}>
+		<article className="p-1 mb-8 mx-auto max-w-[1280px] flex justify-center items-center flex-col ">
+			<h1 className=" text-4xl">{type}</h1>
+			<div className="flex flex-col gap-4">
 				<NotesHeader />
 				{data.map((el) => (
 					<Card

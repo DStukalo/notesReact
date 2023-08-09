@@ -4,8 +4,6 @@ import { NotesTable } from './components/NotesTable/NotesTable';
 import { SummaryTable } from './components/SummaryTable/SummaryTable';
 import { useMainPageData } from './hooks/useMainPageData';
 
-import styles from './MainPage.module.css';
-
 export function MainPage() {
 	const notes = useMainPageData();
 
@@ -14,7 +12,7 @@ export function MainPage() {
 	}, []);
 
 	return (
-		<article className={styles.container}>
+		<article className="p-1 mb-8 mx-auto max-w-[1280px] flex justify-center items-center flex-col">
 			<NotesTable data={notes} />
 			<SummaryTable data={notes} />
 		</article>
