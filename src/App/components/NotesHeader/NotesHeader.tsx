@@ -1,20 +1,26 @@
 import { SvgSprite } from '~components/SvgSprite/SvgSprite';
 
-import styles from './NotesHeader.module.css';
-
 export function NotesHeader() {
 	return (
-		<header className={styles.header}>
-			<ul className={styles.header_list}>
-				<li className={styles.header_logo} />
-				<li className={styles.header_item}>Name</li>
-				<li className={styles.header_item}>Created</li>
-				<li className={styles.header_item}>Category</li>
-				<li className={styles.header_item}>Content</li>
-				<li className={styles.header_item}>Dates</li>
-				<li className={styles.header_icons}>
-					<SvgSprite file="icons" id="directory-close" classes={styles.icon} />
-					<SvgSprite file="icons" id="bin" classes={styles.icon} />
+		<header className="p-3 w-[1240px] min-h-[40px] bg-secondary-100 text-tertiary-100 text-start w">
+			<ul className="p-0 flex gap-4">
+				<li className="w-16 list-none" />
+				<li className=" w-48 list-none">Name</li>
+				<li className=" w-48 list-none">Created</li>
+				<li className=" w-48 list-none">Category</li>
+				<li className=" w-48 list-none">Content</li>
+				<li className=" w-48 list-none">Dates</li>
+				<li className=" w-48 flex justify-end list-none">
+					<SvgSprite
+						file="icons"
+						id="directory-close"
+						classes="w-5 h-5 fill-tertiary-100"
+					/>
+					<SvgSprite
+						file="icons"
+						id="bin"
+						classes="w-5 h-5 fill-tertiary-100"
+					/>
 				</li>
 			</ul>
 		</header>
