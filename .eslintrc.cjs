@@ -1,18 +1,105 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-  },
-}
+	env: {
+		browser: true,
+		es2021: true,
+		jest: true,
+	},
+	extends: [
+		'airbnb',
+		'airbnb/hooks',
+		'eslint:recommended',
+		'plugin:react/recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react/jsx-runtime',
+		'./.eslintrc-typescript.cjs',
+	],
+	parserOptions: {
+		ecmaFeatures: { jsx: true },
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	plugins: ['react', 'simple-import-sort'],
+	settings: {
+		'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+		'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] } },
+	},
+	rules: {
+		'simple-import-sort/imports': [
+			2,
+			{
+				groups: [
+					['^react'],
+					['^@?\\w'],
+					['@/(.*)'],
+					['^~'],
+					['^[./]'],
+					['^~assets'],
+					['@.+.(sc|sa|c)ss$'],
+					['.(sc|sa|c)ss$'],
+					['.module.(sc|sa|c)ss$'],
+				],
+			},
+		],
+		'comma-dangle': [
+			'error',
+			{
+				arrays: 'always-multiline',
+				objects: 'always-multiline',
+				imports: 'never',
+				exports: 'never',
+				functions: 'never',
+			},
+		],
+		'import/no-extraneous-dependencies': [
+			'error',
+			{
+				devDependencies: true,
+				optionalDependencies: false,
+				peerDependencies: false,
+			},
+		],
+		'implicit-arrow-linebreak': 0,
+		'arrow-body-style': ['error', 'as-needed'],
+		indent: [2, 'tab'],
+		'react/jsx-indent': [
+			2,
+			'tab',
+			{ checkAttributes: false, indentLogicalExpressions: true },
+		],
+		'react/jsx-indent-props': [2, 'tab'],
+		'no-tabs': 0,
+		'linebreak-style': [2, 'unix'],
+		quotes: [2, 'single'],
+		semi: [2, 'always'],
+		'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
+		'import/prefer-default-export': 'off',
+		'react/require-default-props': ['off'],
+		'react/jsx-filename-extension': [
+			2,
+			{ extensions: ['.js', 'jsx', '.ts', '.tsx'] },
+		],
+		'import/no-unresolved': 0,
+		'import/extensions': [
+			2,
+			'ignorePackages',
+			{
+				'': 'never',
+				js: 'never',
+				jsx: 'never',
+				ts: 'never',
+				tsx: 'never',
+			},
+		],
+		'react/no-unknown-property': [2, { ignore: ['css'] }],
+		'react/jsx-props-no-spreading': 'off',
+		'no-param-reassign': [
+			'error',
+			{
+				props: true,
+				ignorePropertyModificationsFor: ['state'],
+			},
+		],
+		'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+		'object-curly-newline': ['error', { consistent: true }],
+	},
+};
